@@ -4,8 +4,11 @@
   <div class= 'team-main'>
   <h1 class= 'main-header'>edit Team</h1>
     <%= form_with model: [@company,@team], class: 'form', local: true do |f| %>
-
-
+      <div class='member-select'>
+        <%= collection_check_boxes(:team,:member_ids, @company.members, :id, :member_name ) do |member| %>
+          <%= member.label { member.check_box + member.text } %>
+        <% end %>
+      </div>
       <%= f.submit '編集', class: 'form-submit' %>
       <%= link_to 'Back', company_team_path(@company,@team.id), class: 'btn'%>
     <% end %>
