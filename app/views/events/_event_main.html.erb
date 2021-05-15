@@ -1,0 +1,23 @@
+<div class= 'event-main'>
+    <h1 class= 'main-header'>作業リスト</h1>
+    <table class= "team-table">
+      <thead class= "team-thead">
+        <tr>
+          <th class= "team-th">作業名</th>
+        </tr>
+      </thead>
+   
+      <tbody class= "team-tbody">
+        <% if @plan.events.present?%>
+          <% @plan.events.each do |event|%>
+          <tr >
+            <td class= "team-td"> <%= event.title %> <%= link_to '編集', edit_company_plan_event_path(@company,@plan,event.id), class: 'del-btn' %> <%= link_to '削除', company_plan_event_path(@company,@plan,event.id), method: :delete, class: 'del-btn' %></td>
+          </tr>
+          <% end %>
+        <% else %>
+          <td class= "team-td">登録なし</td>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to '+作業', new_company_plan_event_path(@company,@plan), class: 'btn'%>
+  </div>

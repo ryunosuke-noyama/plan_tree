@@ -1,6 +1,12 @@
+.plan-show {
+  display: flex;
+  justify-content: space-between;
+}
+
 .fc-theme-standard {
   width: 60vw;
   height: 85vh;
+  margin-left: 20px;
 }
 
 .fc-icon-chevron-left {
@@ -21,4 +27,8 @@
 
 .fc-scrollgrid-sync-inner {
   background-color: white;
+}
+
+.event-main {
+  width: 35vw;
 }

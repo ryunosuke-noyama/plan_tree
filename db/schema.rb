@@ -10,12 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_15_014746) do
+ActiveRecord::Schema.define(version: 2021_05_15_024359) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "limit_date"
+    t.integer "status_id", null: false
+    t.bigint "plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_events_on_plan_id"
   end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_05_15_014746) do
     t.index ["company_id"], name: "index_teams_on_company_id"
   end
 
+  add_foreign_key "events", "plans"
   add_foreign_key "members", "companies"
   add_foreign_key "plans", "companies"
   add_foreign_key "team_members", "members"

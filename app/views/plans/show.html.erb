@@ -1,2 +1,5 @@
 <%= render "shared/header1" %>
-<div id='calendar'></div>
+<div class= "plan-show">
+  <div id='calendar'></div>
+  <%= render 'events/event_main', collection: @evet %>
+</div>
