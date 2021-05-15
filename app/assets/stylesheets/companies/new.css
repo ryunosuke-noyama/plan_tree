@@ -1,0 +1,25 @@
+.company_main {
+  width: 100vw;
+  height: 90vh;
+  padding: 2vh 2vw;
+}
+
+.main_header {
+  width: 100%;
+  font-size: 25px;
+  color:white;
+}
+
+.form-submit {
+  font-size: 16px;
+  color: white;
+  background-color: darkolivegreen;
+  border: none;
+}
+
+.btn {
+  font-size: 16px;
+  color:white;
+  background-color: darkolivegreen;
+  padding: 6.5px 6px;
+}
