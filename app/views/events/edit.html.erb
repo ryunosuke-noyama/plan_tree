@@ -3,7 +3,7 @@
 <div class= 'main'>
   <div class= 'event-main'>
   <h1 class= 'main-header'>作業編集</h1>
-    <%= form_with model: [@company,@plan,@event], class: 'form', local: true do |f| %>
+    <%= form_with model: [@company,@plan,@event], class: 'form2', local: true do |f| %>
       <%= f.text_field :title, class: 'form-company', autocomplete: 'off'%>
       <%= f.text_field :body, class: 'form-company', autocomplete: 'off'%>
       <div class="event-form">
@@ -13,7 +13,7 @@
         状況<%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"status-select"}) %>
       </div>
       <%= f.submit '編集',  class: 'form-submit' %>
-      <%= link_to 'Back', company_plan_path(@company.id, @plan.id), class: 'btn'%>
+      <%= link_to 'Back', company_plan_path(@company.id, @plan.id), class: 'btn2'%>
     <% end %>
   </div>
 </div>

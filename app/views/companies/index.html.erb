@@ -6,12 +6,12 @@
     <% if @companies.present?%>
     <% @companies.each do |company|%>
       <li class='list'>
-        <%= link_to company.company_name, company_path(company.id)%><%= link_to '削除', company_path(company.id), method: :delete, class: 'btn' %>
+        <%= link_to company.company_name, company_path(company.id)%><%= link_to '削除', company_path(company.id), method: :delete, class: 'btn2' %>
       </li>
     <% end %>
     <% else %>
       登録なし
     <% end %>
   </ul>
-  <%= link_to '+会社', new_company_path, class: 'btn'%>
+  <%= link_to '+会社', new_company_path, class: 'btn2'%>
 </div>

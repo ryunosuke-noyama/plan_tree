@@ -2,6 +2,6 @@
   <div class= 'header_area'>
     <%= link_to image_tag("Logo.png", class:"icon"), "/" %>
     <%= link_to @company.company_name,company_path(@company.id) , class: "link_header"%>
-    <div class= 'user_name'>ユーザー名</div>
+    <%= link_to current_user.name, edit_user_path(current_user) ,class:'user_name'%>
    </div>
 </header>
