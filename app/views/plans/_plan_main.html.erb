@@ -1,0 +1,23 @@
+<div class= 'plan-main'>
+    <h1 class= 'main-header'>Plan List</h1>
+    <table class= "plan-table">
+      <thead class= "plan-thead">
+        <tr>
+          <th class= "plan-th">plan_name</th>
+        </tr>
+      </thead>
+   
+      <tbody class= "plan-tbody">
+        <% if @company.plans.present?%>
+          <% @company.plans.each do |plan|%>
+          <tr >
+            <td class= "plan-td"><%= link_to plan.plan_name, company_plan_path(@company,plan.id)%> <%= link_to '削除', company_plan_path(@company,plan.id), method: :delete, class: 'del-btn' %></td>
+          </tr>
+          <% end %>
+        <% else %>
+          <td class= "plan-td">登録なし</td>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to '+Plan', new_company_plan_path(@company) , class: 'btn'%>
+  </div>

@@ -1,0 +1,9 @@
+.event-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer {
+  margin-top: 30px;
+}
