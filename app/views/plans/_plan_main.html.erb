@@ -1,9 +1,9 @@
 <div class= 'plan-main'>
-    <h1 class= 'main-header'>Plan List</h1>
+    <h1 class= 'main-header'>案件リスト</h1>
     <table class= "plan-table">
       <thead class= "plan-thead">
         <tr>
-          <th class= "plan-th">plan_name</th>
+          <th class= "plan-th">案件名</th>
         </tr>
       </thead>
    
@@ -11,7 +11,7 @@
         <% if @company.plans.present?%>
           <% @company.plans.each do |plan|%>
           <tr >
-            <td class= "plan-td"><%= link_to plan.plan_name, company_plan_path(@company,plan.id)%> <%= link_to '削除', company_plan_path(@company,plan.id), method: :delete, class: 'del-btn' %></td>
+            <td class= "plan-td"><%= link_to plan.plan_name, company_plan_path(@company,plan.id)%> <%= link_to '削除', company_plan_path(@company,plan.id), method: :delete, class: 'btn' %></td>
           </tr>
           <% end %>
         <% else %>
@@ -19,5 +19,5 @@
         <% end %>
       </tbody>
     </table>
-    <%= link_to '+Plan', new_company_plan_path(@company) , class: 'btn'%>
+    <%= link_to '+案件', new_company_plan_path(@company) , class: 'btn'%>
   </div>

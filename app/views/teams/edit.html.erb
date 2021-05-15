@@ -1,8 +1,8 @@
-<%= render "shared/header1" %>
+<%= render "shared/header2" %>
 
 <div class= 'main'>
   <div class= 'team-main'>
-  <h1 class= 'main-header'>edit Team</h1>
+  <h1 class= 'main-header'>チーム編集</h1>
     <%= form_with model: [@company,@team], class: 'form', local: true do |f| %>
       <div class='member-select'>
         <%= collection_check_boxes(:team,:member_ids, @company.members, :id, :member_name ) do |member| %>

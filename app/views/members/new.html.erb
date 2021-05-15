@@ -1,12 +1,12 @@
-<%= render "shared/header1" %>
+<%= render "shared/header2" %>
 
 <div class= 'member_main'>
-  <h1 class= 'main_header'>+Member</h1>
+  <h1 class= 'main-header'>+メンバー</h1>
   <%= form_with model: [@company,@member], class: 'form', local: true do |f| %>
     <div class="form-input">
-      <%= f.text_field :member_name, class: 'form-company', placeholder: 'type a member name' , autocomplete: 'off'%>
+      <%= f.text_field :member_name, class: 'form-company', placeholder: '追加するメンバー名を入力してください' , autocomplete: 'off'%>
     </div>
     <%= f.submit '追加', class: 'form-submit' %>
-    <%= link_to 'Back', root_path, class: 'btn'%>
+    <%= link_to 'Back', company_path(@company.id), class: 'btn'%>
   <% end %>
 </div>

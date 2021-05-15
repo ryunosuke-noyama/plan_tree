@@ -1,9 +1,9 @@
 <div class= 'team-main'>
-    <h1 class= 'main-header'>Team List</h1>
+    <h1 class= 'main-header'>チームリスト</h1>
     <table class= "team-table">
       <thead class= "team-thead">
         <tr>
-          <th class= "team-th">team_name</th>
+          <th class= "team-th">チーム名</th>
         </tr>
       </thead>
    
@@ -11,7 +11,7 @@
         <% if @company.teams.present?%>
           <% @company.teams.each do |team|%>
           <tr >
-            <td class= "team-td"><%= link_to team.team_name, company_team_path(@company,team.id)%> <%= link_to '削除', company_team_path(@company,team.id), method: :delete, class: 'del-btn' %></td>
+            <td class= "team-td"><%= link_to team.team_name, company_team_path(@company,team.id)%> <%= link_to '削除', company_team_path(@company,team.id), method: :delete, class: 'btn' %></td>
           </tr>
           <% end %>
         <% else %>
@@ -19,5 +19,5 @@
         <% end %>
       </tbody>
     </table>
-    <%= link_to '+Team', new_company_team_path(@company), class: 'btn'%>
+    <%= link_to '+チーム', new_company_team_path(@company), class: 'btn'%>
   </div>

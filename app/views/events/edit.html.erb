@@ -1,16 +1,18 @@
-<%= render "shared/header1" %>
+<%= render "shared/header2" %>
 
 <div class= 'main'>
   <div class= 'event-main'>
   <h1 class= 'main-header'>作業編集</h1>
     <%= form_with model: [@company,@plan,@event], class: 'form', local: true do |f| %>
-      <%= f.text_field :title, class: 'form-company', placeholder: '作業名を入力してください' , autocomplete: 'off'%>
-      <%= f.text_field :body, class: 'form-company', placeholder: '作業内容を入力してください' , autocomplete: 'off'%>
-      開始日<%= f.date_field :start_date %>
-      終了日<%= f.date_field :end_date %>
-      期限<%= f.date_field :limit_date %>
-      状況<%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"status-select"}) %>
-      <%= f.submit '編集', class: 'form-submit' %>
+      <%= f.text_field :title, class: 'form-company', autocomplete: 'off'%>
+      <%= f.text_field :body, class: 'form-company', autocomplete: 'off'%>
+      <div class="event-form">
+        開始日<%= f.date_field :start_date, class:'form-date'%>
+        終了日<%= f.date_field :end_date, class:'form-date' %>
+        期限<%= f.date_field :limit_date, class:'form-date' %>
+        状況<%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"status-select"}) %>
+      </div>
+      <%= f.submit '編集',  class: 'form-submit' %>
       <%= link_to 'Back', company_plan_path(@company.id, @plan.id), class: 'btn'%>
     <% end %>
   </div>

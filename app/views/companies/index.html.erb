@@ -6,7 +6,7 @@
     <% if @companies.present?%>
     <% @companies.each do |company|%>
       <li class='list'>
-        <%= link_to company.company_name, company_path(company.id)%><%= link_to '削除', company_path(company.id), method: :delete, class: 'del-btn' %>
+        <%= link_to company.company_name, company_path(company.id)%><%= link_to '削除', company_path(company.id), method: :delete, class: 'btn' %>
       </li>
     <% end %>
     <% else %>

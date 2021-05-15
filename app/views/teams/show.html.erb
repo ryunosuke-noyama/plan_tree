@@ -1,11 +1,11 @@
-<%= render "shared/header1" %>
+<%= render "shared/header2" %>
 <div class= 'main'>
   <div class= 'member-main'>
-      <h1 class= 'main-header'>Member List</h1>
+      <h1 class= 'main-header'>チームメンバーリスト</h1>
       <table class= "member-table">
         <thead class= "member-thead">
           <tr>
-              <th class= "member-th">member_name</th>
+              <th class= "member-th">メンバー名</th>
           </tr>
         </thead>
    
@@ -13,7 +13,7 @@
           <% if @team.members.present?%>
             <% @team.members.each do |member|%>
               <tr >
-                <td class= "member-td"><%= link_to member.member_name, "/"%></td>
+                <td class= "member-td"><%= link_to member.member_name %></td>
               </tr>
             <% end %>
           <% else %>
@@ -21,7 +21,7 @@
           <% end %>
         </tbody>
       </table>
-      <%= link_to 'edit Member', edit_company_team_path, class: 'btn'%>
+      <%= link_to 'チームメンバー編集', edit_company_team_path, class: 'btn'%>
     </div>
   </div>
 </div>
