@@ -1,0 +1,13 @@
+<%= render "shared/header1" %>
+
+<div class= 'main'>
+  <div class= 'team-main'>
+  <h1 class= 'main-header'>edit Team</h1>
+    <%= form_with model: [@company,@team], class: 'form', local: true do |f| %>
+
+
+      <%= f.submit '編集', class: 'form-submit' %>
+      <%= link_to 'Back', company_team_path(@company,@team.id), class: 'btn'%>
+    <% end %>
+  </div>
+</div>
