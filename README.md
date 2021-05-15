@@ -1,24 +1,74 @@
-# README
+## Userテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| column    | type    | options     |
+| e-mail    | string  | null: false |
+| user_name | string  | null: false |
+| password  | string  | null: false |
 
-Things you may want to cover:
+## Association
 
-* Ruby version
+## Companiesテーブル
 
-* System dependencies
+| column       | type   | options     |
+| company_name | string | null: false |
 
-* Configuration
+## Association
+- has_many :members
+- has_many :teams
+- has_many :plans
 
-* Database creation
+## Memberテーブル
 
-* Database initialization
+| column      | type       | options                        |
+| member_name | string     | null: false                    |
+| company     | references | null: false, foreign_key: true |
 
-* How to run the test suite
+## Association
+- has_many :member_teams
+- has_one :company
 
-* Services (job queues, cache servers, search engines, etc.)
+## Teamsテーブル
 
-* Deployment instructions
+| column    | type       | options                        |
+| team_name | string     | null: false                    |
+| company   | references | null: false, foreign_key: true |
 
-* ...
+### Association
+- has_many :member_team
+- belongs_to :companies
+
+## Member_teamテーブル
+
+| column | type       | options                        |
+| user   | references | null: false, foreign_key: true |
+| team   | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :member
+- belongs_to :team
+
+## Plansテーブル
+
+| column     | type       | options                        |
+| plan-name  | string     | null: false                    |
+| team       | references | null: false, foreign_key: true |
+
+### Association
+- has_many :events
+- belongs_to_active_hash :status
+- belongs_to :companies
+
+## Eventsテーブル
+
+| column     | type       | options                        |
+| title      | string     | null: false                    |
+| body       | text       |                                |
+| start_date | date       |                                |
+| last_date  | date       |                                |
+| limit_date | date       |                                |
+| status     | integer    | null: false                    |
+| plan       | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to_active_hash :status
+- belongs_to :plan
