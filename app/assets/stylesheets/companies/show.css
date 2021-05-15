@@ -1,0 +1,12 @@
+.main {
+  width: 100vw;
+  height: 90vh;
+  padding: 2vh 2vw;
+  display: flex;
+}
+
+a {
+  color:darkolivegreen;
+  background-color: white;
+  text-decoration: none;
+}
