@@ -1,0 +1,23 @@
+<div class= 'member-main'>
+    <h1 class= 'main-header'>Member List</h1>
+    <table class= "member-table">
+      <thead class= "member-thead">
+        <tr>
+          <th class= "member-th">member_name</th>
+        </tr>
+      </thead>
+   
+      <tbody class= "member-tbody">
+        <% if @company.members.present?%>
+          <% @company.members.each do |member|%>
+          <tr >
+            <td class= "member-td"><%= link_to member.member_name, company_member_path(@company,member.id)%><%= link_to '削除', company_member_path(@company,member.id), method: :delete, class: 'del-btn' %></td>
+          </tr>
+          <% end %>
+        <% else %>
+          <td class= "member-td">登録なし</td>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to '+Member', new_company_member_path(@company), class: 'btn'%>
+  </div>
