@@ -1,6 +1,6 @@
 <header class='top-page-header'>
   <div class= 'header_area'>
     <%= link_to image_tag("Logo.png", class:"icon"), "/" %>
-    <div class= 'user_name'>ユーザー名</div>
+    <%= link_to current_user.name, edit_user_path(current_user) ,class:'user_name'%>
    </div>
 </header>

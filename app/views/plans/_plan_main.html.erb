@@ -11,7 +11,7 @@
         <% if @company.plans.present?%>
           <% @company.plans.each do |plan|%>
           <tr >
-            <td class= "plan-td"><%= link_to plan.plan_name, company_plan_path(@company,plan.id)%> <%= link_to '削除', company_plan_path(@company,plan.id), method: :delete, class: 'btn' %></td>
+            <td class= "plan-td"><%= link_to plan.plan_name, company_plan_path(@company,plan.id)%> <%= link_to '削除', company_plan_path(@company,plan.id), method: :delete, class: 'btn2' %></td>
           </tr>
           <% end %>
         <% else %>
@@ -19,5 +19,5 @@
         <% end %>
       </tbody>
     </table>
-    <%= link_to '+案件', new_company_plan_path(@company) , class: 'btn'%>
+    <%= link_to '+案件', new_company_plan_path(@company) , class: 'btn2'%>
   </div>
